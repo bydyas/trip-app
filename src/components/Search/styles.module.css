@@ -1,0 +1,27 @@
+.root, .input {
+    width: 300px;
+    background-color: #f2f4f8;
+    padding-left: 15px;
+    border-radius: 8px;
+    border: 0;
+}
+
+.root {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 48px;
+    border-radius: 8px;
+    border: 0;
+    outline: 0;
+}
+
+input::placeholder {
+    font-family: initial;
+    color: black;
+    font-size: 1.5em;
+}

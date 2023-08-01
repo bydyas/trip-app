@@ -4,13 +4,10 @@ import styles from './styles.module.css';
 import TripCard from '../TripCard';
 
 const TripList: FC<ITripListProps> = ({ trips }) => {
-  return (
-    <ul className={styles.list}>
-      {trips.map((item) => (
-        <TripCard key={item.id} city={item.city} URL={item.URL} dateRange={item.dateRange} />
-      ))}
-    </ul>
-  );
+  const renderCards = trips.map((item) => (
+    <TripCard key={item.id} city={item.city} URL={item.URL} dateRange={item.dateRange} />
+  ));
+  return <ul className={styles.list}>{trips.length ? renderCards : 'No scheduled trips'}</ul>;
 };
 
 export default TripList;

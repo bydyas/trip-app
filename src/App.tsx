@@ -1,6 +1,8 @@
+import { useState } from 'react';
+import Search from './components/Search';
 import TripList from './components/TripList';
 
-const trips = [
+const data = [
   {
     id: 1,
     city: 'London',
@@ -28,7 +30,23 @@ const trips = [
 ];
 
 function App() {
-  return <TripList trips={trips} />;
+  const [trips, setTrips] = useState(data);
+
+  const searchTripByCity = (city: string): void => {
+    if (!city) {
+      setTrips(data);
+    } else {
+      setTrips(trips.filter((trip) => trip.city.toLowerCase().includes(city.toLowerCase())));
+    }
+  };
+
+  return (
+    <div className="app">
+      <h1>Weather Forecast</h1>
+      <Search searchTripByCity={searchTripByCity} />
+      <TripList trips={trips} />
+    </div>
+  );
 }
 
 export default App;
