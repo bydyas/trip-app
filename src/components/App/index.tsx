@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import Search from './components/Search';
-import TripList from './components/TripList';
+import Search from '../Search';
+import TripList from '../TripList';
+import styles from './styles.module.css';
 
 const data = [
   {
@@ -42,7 +43,11 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Weather Forecast</h1>
+      <header className={styles.header}>
+        <h1 className={styles.heading}>
+          Weather <span>Forecast</span>
+        </h1>
+      </header>
       <Search searchTripByCity={searchTripByCity} />
       <TripList trips={trips} />
     </div>
