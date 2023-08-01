@@ -4,13 +4,13 @@ import styles from './styles.module.css';
 
 const TripCard: FC<ITripCardProps> = ({ city, URL, dateRange }) => {
   return (
-    <div className={styles.card}>
+    <li className={styles.card}>
       <img className={styles.image} src={URL} alt={city} />
       <div className={styles.details}>
         <h3 className={styles.city}>{city}</h3>
         <p className={styles.date}>{dateRange}</p>
       </div>
-    </div>
+    </li>
   );
 };
 
