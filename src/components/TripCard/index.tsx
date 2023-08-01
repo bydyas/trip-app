@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { TripCardProps } from './types';
+import { ITripCardProps } from './interfaces';
 import styles from './styles.module.css';
 
-const TripCard: FC<TripCardProps> = ({ city, URL, dateRange }) => {
+const TripCard: FC<ITripCardProps> = ({ city, URL, dateRange }) => {
   return (
     <div className={styles.card}>
       <img className={styles.image} src={URL} alt={city} />
