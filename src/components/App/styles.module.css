@@ -9,3 +9,8 @@
 .heading span {
     font-weight: 600;
 }
+
+.trips {
+    display: flex;
+    gap: 5%;
+}

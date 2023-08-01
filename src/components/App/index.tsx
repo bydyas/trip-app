@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Search from '../Search';
 import TripList from '../TripList';
 import styles from './styles.module.css';
+import AddNewTrip from '../AddNewTrip';
 
 const data = [
   {
@@ -42,15 +43,21 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <header className={styles.header}>
-        <h1 className={styles.heading}>
-          Weather <span>Forecast</span>
-        </h1>
-      </header>
-      <Search searchTripByCity={searchTripByCity} />
-      <TripList trips={trips} />
-    </div>
+    <>
+      <div id="app-modal" />
+      <div className="app">
+        <header className={styles.header}>
+          <h1 className={styles.heading}>
+            Weather <span>Forecast</span>
+          </h1>
+        </header>
+        <Search searchTripByCity={searchTripByCity} />
+        <div className={styles.trips}>
+          <TripList trips={trips} />
+          <AddNewTrip />
+        </div>
+      </div>
+    </>
   );
 }
 
