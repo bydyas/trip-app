@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 const ModalForm: FC<IModalFormProps> = ({ close, addTrip }) => {
   const [city, setCity] = useState<string>('');
   const [URL, setURL] = useState<string>('');
-  const [startDate, setStartDate] = useState<string>('');
+  const [startDate, setStartDate] = useState<string>(new Date().toISOString().substring(0, 10));
   const [endDate, setEndDate] = useState<string>('');
 
   const onSelectCity = (e: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -68,6 +68,10 @@ const ModalForm: FC<IModalFormProps> = ({ close, addTrip }) => {
                   type="date"
                   name="dateStarts"
                   value={startDate}
+                  min={new Date().toISOString().substring(0, 10)}
+                  max={new Date(new Date().setDate(new Date().getDate() + 15))
+                    .toISOString()
+                    .substring(0, 10)}
                 />
               </label>
               <label>
@@ -79,6 +83,10 @@ const ModalForm: FC<IModalFormProps> = ({ close, addTrip }) => {
                   type="date"
                   name="dateStarts"
                   value={endDate}
+                  min={new Date(Date.parse(startDate)).toISOString().substring(0, 10)}
+                  max={new Date(new Date().setDate(new Date(Date.parse(startDate)).getDate() + 15))
+                    .toISOString()
+                    .substring(0, 10)}
                 />
               </label>
             </div>

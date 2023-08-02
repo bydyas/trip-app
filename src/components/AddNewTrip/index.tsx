@@ -11,12 +11,8 @@ const AddNewTrip: FC<IAddNewTripProps> = ({ addTrip }) => {
   return (
     <>
       <button className={styles.root} onClick={() => setOpen(true)}>
-        {open || (
-          <>
-            <p>+</p>
-            <p>add trip</p>
-          </>
-        )}
+        <p>+</p>
+        <p>add trip</p>
       </button>
       {open && <ModalForm close={close} addTrip={addTrip} />}
     </>
