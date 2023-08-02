@@ -13,14 +13,15 @@ import Countdown from '../Countdown';
 function App() {
   const [trips, setTrips] = useState(mockData.trips);
   const [filteredTrips, setFilteredTrips] = useState(mockData.trips);
-  const { getTodaysForecastForCity, loading } = useWeather();
+  const { getTodaysForecastForCity, getFullForecastForCity, loading } = useWeather();
   const [todaysForecast, setTodaysForecast] = useState<ITodaysForecast>();
   const [targetDate, setTargetDate] = useState<string>(mockData.trips[0].startDate);
 
-  useEffect(() => {
-    const fetchMockForecast = async () => await getTodaysForecastForCity(mockData.trips[0].city);
-    fetchMockForecast().then((forecast) => setTodaysForecast(forecast));
-  }, []);
+  useEffect(
+    () =>
+      askForecast(mockData.trips[0].city, mockData.trips[0].startDate, mockData.trips[0].endDate),
+    [],
+  );
 
   const searchTripByCity = (city: string): void => {
     if (!city) {
@@ -48,9 +49,12 @@ function App() {
     }
   };
 
-  const askTodaysForecast = (city: string) => {
-    const fetchMockForecast = async () => await getTodaysForecastForCity(city);
-    fetchMockForecast().then((forecast) => setTodaysForecast(forecast));
+  const askForecast = (city: string, startDate: string, endDate: string) => {
+    const fetchTodayskForecast = async () => await getTodaysForecastForCity(city);
+    fetchTodayskForecast().then((forecast) => setTodaysForecast(forecast));
+
+    const fetchFullForecast = async () => await getFullForecastForCity(city, startDate, endDate);
+    fetchFullForecast().then((forecast) => console.log(forecast));
   };
 
   const runCountdownTimer = (date: string) => setTargetDate(date);
@@ -69,7 +73,7 @@ function App() {
           <div className={styles.trips}>
             <TripList
               trips={filteredTrips}
-              askTodaysForecast={askTodaysForecast}
+              askForecast={askForecast}
               runCountdownTimer={runCountdownTimer}
             />
             <AddNewTrip addTrip={addTrip} />

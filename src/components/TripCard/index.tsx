@@ -7,11 +7,11 @@ const TripCard: FC<ITripCardProps> = ({
   URL,
   startDate,
   endDate,
-  askTodaysForecast,
+  askForecast,
   runCountdownTimer,
 }) => {
   const active = () => {
-    askTodaysForecast(city);
+    askForecast(city, startDate, endDate);
     runCountdownTimer(startDate);
   };
 

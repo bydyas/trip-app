@@ -3,12 +3,12 @@ import { ITripListProps } from './interfaces';
 import styles from './styles.module.css';
 import TripCard from '../TripCard';
 
-const TripList: FC<ITripListProps> = ({ trips, askTodaysForecast, runCountdownTimer }) => {
+const TripList: FC<ITripListProps> = ({ trips, askForecast, runCountdownTimer }) => {
   const renderCards = trips.map((trip) => (
     <TripCard
       key={trip.id}
       {...trip}
-      askTodaysForecast={askTodaysForecast}
+      askForecast={askForecast}
       runCountdownTimer={runCountdownTimer}
     />
   ));

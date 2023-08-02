@@ -32,9 +32,46 @@ export const useWeather = () => {
     }
   }, []);
 
+  const getFullForecastForCity = useCallback(async (city: string, date1: string, date2: string) => {
+    try {
+      setError(false);
+      setLoading(true);
+      const res = await fetch(
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/${city}/${date1}/${date2}?unitGroup=metric&include=days&key=${
+          import.meta.env.VITE_API_KEY
+        }&contentType=json`,
+      );
+
+      const { days } = await res.json();
+      setLoading(false);
+
+      return _parseDays(days);
+    } catch (error) {
+      setLoading(false);
+      setError(true);
+      console.log(error);
+    }
+  }, []);
+
+  const _parseDays = (days: any) => {
+    return days.map((day: any) => {
+      return {
+        dayOfWeek: new Date(day.datetime).toLocaleDateString('en-US', {
+          weekday: 'long',
+        }),
+        tempmax: day.tempmax,
+        tempmin: day.tempmin,
+        icon: day.icon,
+      };
+    });
+  };
+
   return {
     loading,
     error,
     getTodaysForecastForCity,
+    getFullForecastForCity,
   };
 };
