@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import ReactDOM from 'react-dom';
+import { v4 as uuidv4 } from 'uuid';
 import { IModalFormProps } from './interfaces';
 import mockData from '../../../assets/mocks/cities.json';
 import styles from './styles.module.css';
@@ -31,10 +32,11 @@ const ModalForm: FC<IModalFormProps> = ({ close, addTrip }) => {
   const onSave = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     addTrip({
-      id: Math.floor(Math.random() * (500 - 10 + 1)) + 10,
+      id: uuidv4(),
       city,
       URL,
-      dateRange: startDate + '  -  ' + endDate,
+      startDate,
+      endDate,
     });
     onCancel();
   };

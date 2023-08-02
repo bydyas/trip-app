@@ -1,10 +1,11 @@
 {
     "trips": [
         {
-          "id": 1,
+          "id": "11bf5b37-oooo-42e0-8dcf-dc8c4aefc000",
           "city": "London",
           "URL": "https://i2-prod.mirror.co.uk/incoming/article28871026.ece/ALTERNATES/s1200c/0_London-at-sunset.jpg",
-          "dateRange": "20.01.2023 - 25.01.2023"
+          "startDate": "2023-08-02",
+          "endDate": "2023-08-06"
         }
       ]
 }

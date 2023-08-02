@@ -1,9 +1,7 @@
-export interface ITripCardProps {
+export interface ITripCard {
+  id: string;
   city: string;
   URL: string;
-  dateRange: string;
-}
-
-export interface ITripCard extends ITripCardProps {
-  id: number;
+  startDate: string;
+  endDate: string;
 }

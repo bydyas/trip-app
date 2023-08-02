@@ -21,10 +21,12 @@ function App() {
   };
 
   const addTrip = (newTrip: ITripCard) => {
-    const doesExistThisTrip = !!trips.find((trip) => trip.dateRange === newTrip.dateRange);
+    const doesExistThisTrip = !!trips.find(
+      (trip) => trip.startDate === newTrip.startDate && trip.endDate === newTrip.endDate,
+    );
 
     if (doesExistThisTrip) {
-      alert(`Trip (${newTrip.city}[${newTrip.dateRange}]) already exists!`);
+      alert(`Trip (${newTrip.city}[${newTrip.startDate} - ${newTrip.endDate}]) already exists!`);
     } else {
       setTrips([...trips, newTrip]);
       setFilteredTrips([...trips, newTrip]);
