@@ -5,8 +5,8 @@ import mockData from '../../../assets/mocks/cities.json';
 import styles from './styles.module.css';
 
 const ModalForm: FC<IModalFormProps> = ({ close, addTrip }) => {
-  const [city, setCity] = useState<string>('');
-  const [URL, setURL] = useState<string>('');
+  const [city, setCity] = useState<string>(mockData.cities[0].name);
+  const [URL, setURL] = useState<string>(mockData.cities[0].imageURL);
   const [startDate, setStartDate] = useState<string>(new Date().toISOString().substring(0, 10));
   const [endDate, setEndDate] = useState<string>('');
 
@@ -69,7 +69,7 @@ const ModalForm: FC<IModalFormProps> = ({ close, addTrip }) => {
                   name="dateStarts"
                   value={startDate}
                   min={new Date().toISOString().substring(0, 10)}
-                  max={new Date(new Date().setDate(new Date().getDate() + 15))
+                  max={new Date(new Date().setDate(new Date().getDate() + 14))
                     .toISOString()
                     .substring(0, 10)}
                 />
@@ -84,7 +84,7 @@ const ModalForm: FC<IModalFormProps> = ({ close, addTrip }) => {
                   name="dateStarts"
                   value={endDate}
                   min={new Date(Date.parse(startDate)).toISOString().substring(0, 10)}
-                  max={new Date(new Date().setDate(new Date(Date.parse(startDate)).getDate() + 15))
+                  max={new Date(new Date().setDate(new Date(Date.parse(startDate)).getDate() + 14))
                     .toISOString()
                     .substring(0, 10)}
                 />
