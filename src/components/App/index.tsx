@@ -8,12 +8,14 @@ import { ITripCard } from '../TripCard/interfaces';
 import TodaysForecast from '../TodaysForecast';
 import { useWeather } from '../../hooks/useWeather';
 import { ITodaysForecast } from '../TodaysForecast/interfaces';
+import Countdown from '../Countdown';
 
 function App() {
   const [trips, setTrips] = useState(mockData.trips);
   const [filteredTrips, setFilteredTrips] = useState(mockData.trips);
   const { getTodaysForecastForCity, loading } = useWeather();
   const [todaysForecast, setTodaysForecast] = useState<ITodaysForecast>();
+  const [targetDate, setTargetDate] = useState<string>(mockData.trips[0].startDate);
 
   useEffect(() => {
     const fetchMockForecast = async () => await getTodaysForecastForCity(mockData.trips[0].city);
@@ -51,6 +53,8 @@ function App() {
     fetchMockForecast().then((forecast) => setTodaysForecast(forecast));
   };
 
+  const runCountdownTimer = (date: string) => setTargetDate(date);
+
   return (
     <>
       <div id="app-modal" />
@@ -63,12 +67,17 @@ function App() {
           </header>
           <Search searchTripByCity={searchTripByCity} />
           <div className={styles.trips}>
-            <TripList trips={filteredTrips} askTodaysForecast={askTodaysForecast} />
+            <TripList
+              trips={filteredTrips}
+              askTodaysForecast={askTodaysForecast}
+              runCountdownTimer={runCountdownTimer}
+            />
             <AddNewTrip addTrip={addTrip} />
           </div>
         </main>
         <aside className={styles.sidebar}>
           {loading ? 'Pending . . .' : <TodaysForecast {...(todaysForecast as ITodaysForecast)} />}
+          <Countdown targetDate={targetDate} />
         </aside>
       </div>
     </>

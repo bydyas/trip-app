@@ -1,0 +1,22 @@
+.timer, .timeIsUp {
+    color: #FFFFFF;
+}
+
+.timer {
+    display: flex;
+    gap: 10px;
+}
+
+.timer li {
+    text-align: center;
+}
+
+.timer li .nums {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.timer li .desc {
+    font-weight: 300;
+    font-size: 1.25em;
+}

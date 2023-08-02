@@ -8,4 +8,5 @@ export interface ITripCard {
 
 export interface ITripCardProps extends ITripCard {
   askTodaysForecast: (city: string) => void;
+  runCountdownTimer: (date: string) => void;
 }
