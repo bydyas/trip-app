@@ -8,12 +8,15 @@ import { ITripCard } from '../TripCard/interfaces';
 
 function App() {
   const [trips, setTrips] = useState(mockData.trips);
+  const [filteredTrips, setFilteredTrips] = useState(mockData.trips);
 
   const searchTripByCity = (city: string): void => {
     if (!city) {
-      setTrips(mockData.trips);
+      setFilteredTrips(trips);
     } else {
-      setTrips(trips.filter((trip) => trip.city.toLowerCase().includes(city.toLowerCase())));
+      setFilteredTrips(
+        trips.filter((trip) => trip.city.toLowerCase().includes(city.toLowerCase())),
+      );
     }
   };
 
@@ -21,9 +24,10 @@ function App() {
     const doesExistThisTrip = !!trips.find((trip) => trip.dateRange === newTrip.dateRange);
 
     if (doesExistThisTrip) {
-      console.log('trip exists');
+      alert(`Trip (${newTrip.city}[${newTrip.dateRange}]) already exists!`);
     } else {
       setTrips([...trips, newTrip]);
+      setFilteredTrips([...trips, newTrip]);
     }
   };
 
@@ -38,7 +42,7 @@ function App() {
         </header>
         <Search searchTripByCity={searchTripByCity} />
         <div className={styles.trips}>
-          <TripList trips={trips} />
+          <TripList trips={filteredTrips} />
           <AddNewTrip addTrip={addTrip} />
         </div>
       </div>
