@@ -9,6 +9,7 @@
 }
 
 .modal {
+    border-radius: 3px;
     max-width: 500px;
     width: 100%;
     background-color: white;
@@ -25,14 +26,16 @@
     }
 }
 
-.modalHead {
+.modalHead, .modalBtns {
     font-size: 1.25em;
     font-weight: 600;
-    margin-bottom: 20px;
     padding: 15px;
-    border-bottom: 2px solid #f2f4f8;
     display: flex;
     align-items: center;
+}
+
+.modalHead {
+    border-bottom: 2px solid #f2f4f8;
 }
 
 .modalHead h3 {
@@ -41,4 +44,40 @@
 
 .modalHead p {
     cursor: pointer;
+}
+
+.modalFormInner {
+    margin: 20px 0;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.input {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.modalBtns {
+    border-top: 2px solid #f2f4f8;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.modalBtns .cancelBtn, .modalBtns .saveBtn {
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+.modalBtns .cancelBtn {
+    background-color: transparent;
+    border: 2px solid #d9d9d9;
+}
+
+.modalBtns .saveBtn {
+    border: 2px solid #1890ff;
+    background-color: #1890ff;
+    color: #FFFFFF;
 }

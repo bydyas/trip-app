@@ -47,29 +47,49 @@ const ModalForm: FC<IModalFormProps> = ({ close, addTrip }) => {
             <h3>Create trip</h3>
             <p onClick={close}>X</p>
           </div>
-          <form onSubmit={onSave} action="#">
-            <label>
-              City:
-              <select onChange={onSelectCity} name="city">
-                {mockData.cities.map(({ name }) => (
-                  <option key={name} value={name}>
-                    {name}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              Start date:
-              <input onChange={onInputStartDate} type="date" name="dateStarts" value={startDate} />
-            </label>
-            <label>
-              End date:
-              <input onChange={onInputEndDate} type="date" name="dateStarts" value={endDate} />
-            </label>
-            <button onClick={onCancel} type="button">
-              Cancel
-            </button>
-            <button type="submit">Save</button>
+          <form onSubmit={onSave} className={styles.modalForm} action="#">
+            <div className={styles.modalFormInner}>
+              <label>
+                City:
+                <select required onChange={onSelectCity} className={styles.input} name="city">
+                  {mockData.cities.map(({ name }) => (
+                    <option key={name} value={name}>
+                      {name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                Start date:
+                <input
+                  className={styles.input}
+                  required
+                  onChange={onInputStartDate}
+                  type="date"
+                  name="dateStarts"
+                  value={startDate}
+                />
+              </label>
+              <label>
+                End date:
+                <input
+                  className={styles.input}
+                  required
+                  onChange={onInputEndDate}
+                  type="date"
+                  name="dateStarts"
+                  value={endDate}
+                />
+              </label>
+            </div>
+            <div className={styles.modalBtns}>
+              <button onClick={onCancel} className={styles.cancelBtn} type="button">
+                Cancel
+              </button>
+              <button className={styles.saveBtn} type="submit">
+                Save
+              </button>
+            </div>
           </form>
         </div>
       </div>
