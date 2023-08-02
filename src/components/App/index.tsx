@@ -12,7 +12,7 @@ import { ITodaysForecast } from '../TodaysForecast/interfaces';
 function App() {
   const [trips, setTrips] = useState(mockData.trips);
   const [filteredTrips, setFilteredTrips] = useState(mockData.trips);
-  const { getTodaysForecastForCity } = useWeather();
+  const { getTodaysForecastForCity, loading } = useWeather();
   const [todaysForecast, setTodaysForecast] = useState<ITodaysForecast>();
 
   useEffect(() => {
@@ -38,8 +38,11 @@ function App() {
     if (doesExistThisTrip) {
       alert(`Trip (${newTrip.city}[${newTrip.startDate} - ${newTrip.endDate}]) already exists!`);
     } else {
-      setTrips([...trips, newTrip]);
-      setFilteredTrips([...trips, newTrip]);
+      const updatedTrips = [...trips, newTrip].sort((a, b) =>
+        a.startDate > b.startDate ? 1 : b.startDate > a.startDate ? -1 : 0,
+      );
+      setTrips(updatedTrips);
+      setFilteredTrips(updatedTrips);
     }
   };
 
@@ -65,7 +68,7 @@ function App() {
           </div>
         </main>
         <aside className={styles.sidebar}>
-          {todaysForecast && <TodaysForecast {...todaysForecast} />}
+          {loading ? 'Pending . . .' : <TodaysForecast {...(todaysForecast as ITodaysForecast)} />}
         </aside>
       </div>
     </>
