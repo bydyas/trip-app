@@ -1,12 +1,9 @@
 import { FC } from 'react';
 import ReactDOM from 'react-dom';
+import { IModalFormProps } from './interfaces';
 import styles from './styles.module.css';
 
-type ModalFormProps = {
-  close: () => void;
-};
-
-const ModalForm: FC<ModalFormProps> = ({ close }) => {
+const ModalForm: FC<IModalFormProps> = ({ close }) => {
   return ReactDOM.createPortal(
     <>
       <div className={styles.modalShadow}>
@@ -15,6 +12,14 @@ const ModalForm: FC<ModalFormProps> = ({ close }) => {
             <h3>Create trip</h3>
             <p onClick={close}>X</p>
           </div>
+          <form action="#">
+            <label>
+              City:
+              <select name="city">
+                <option value="London">London</option>
+              </select>
+            </label>
+          </form>
         </div>
       </div>
     </>,
