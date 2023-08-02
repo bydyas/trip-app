@@ -1,27 +1,10 @@
-# React + TypeScript + Vite
+# Trip App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+That's the trip app where users can see the weather forecast for their upcoming journeys
 
-Currently, two official plugins are available:
+### [Demo]
+![App](https://github.com/bydyas/trip-app/assets/74198494/3ce28d52-69d1-484b-bdf1-e5eb4cfab7fa)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### [Demo]
+![Form](https://github.com/bydyas/trip-app/assets/74198494/12f2d7da-d7f2-460e-9169-e81c22da2a9e)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
