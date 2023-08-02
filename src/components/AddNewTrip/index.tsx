@@ -1,19 +1,20 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import ModalForm from './ModalForm';
+import { IAddNewTripProps } from './interfaces';
 import styles from './styles.module.css';
 
-const AddNewTrip = () => {
+const AddNewTrip: FC<IAddNewTripProps> = ({ addTrip }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const close = () => setOpen(false);
 
   return (
     <>
-      <div className={styles.root} onClick={() => setOpen(true)}>
+      <button className={styles.root} onClick={() => setOpen(true)}>
         <p>+</p>
         <p>add trip</p>
-      </div>
-      {open && <ModalForm close={close} />}
+      </button>
+      {open && <ModalForm close={close} addTrip={addTrip} />}
     </>
   );
 };

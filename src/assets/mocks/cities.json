@@ -1,0 +1,125 @@
+{
+    "cities": [
+      {
+        "name": "New York City",
+        "imageURL": "https://example.com/new_york_city.jpg"
+      },
+      {
+        "name": "Paris",
+        "imageURL": "https://example.com/paris.jpg"
+      },
+      {
+        "name": "Tokyo",
+        "imageURL": "https://example.com/tokyo.jpg"
+      },
+      {
+        "name": "London",
+        "imageURL": "https://example.com/london.jpg"
+      },
+      {
+        "name": "Sydney",
+        "imageURL": "https://example.com/sydney.jpg"
+      },
+      {
+        "name": "San Francisco",
+        "imageURL": "https://example.com/san_francisco.jpg"
+      },
+      {
+        "name": "Rome",
+        "imageURL": "https://example.com/rome.jpg"
+      },
+      {
+        "name": "Dubai",
+        "imageURL": "https://example.com/dubai.jpg"
+      },
+      {
+        "name": "Beijing",
+        "imageURL": "https://example.com/beijing.jpg"
+      },
+      {
+        "name": "Cairo",
+        "imageURL": "https://example.com/cairo.jpg"
+      },
+      {
+        "name": "Rio de Janeiro",
+        "imageURL": "https://example.com/rio_de_janeiro.jpg"
+      },
+      {
+        "name": "Mumbai",
+        "imageURL": "https://example.com/mumbai.jpg"
+      },
+      {
+        "name": "Berlin",
+        "imageURL": "https://example.com/berlin.jpg"
+      },
+      {
+        "name": "Moscow",
+        "imageURL": "https://example.com/moscow.jpg"
+      },
+      {
+        "name": "Singapore",
+        "imageURL": "https://example.com/singapore.jpg"
+      },
+      {
+        "name": "Toronto",
+        "imageURL": "https://example.com/toronto.jpg"
+      },
+      {
+        "name": "Seoul",
+        "imageURL": "https://example.com/seoul.jpg"
+      },
+      {
+        "name": "Amsterdam",
+        "imageURL": "https://example.com/amsterdam.jpg"
+      },
+      {
+        "name": "Venice",
+        "imageURL": "https://example.com/venice.jpg"
+      },
+      {
+        "name": "Bangkok",
+        "imageURL": "https://example.com/bangkok.jpg"
+      },
+      {
+        "name": "Istanbul",
+        "imageURL": "https://example.com/istanbul.jpg"
+      },
+      {
+        "name": "Cape Town",
+        "imageURL": "https://example.com/cape_town.jpg"
+      },
+      {
+        "name": "Vienna",
+        "imageURL": "https://example.com/vienna.jpg"
+      },
+      {
+        "name": "Barcelona",
+        "imageURL": "https://example.com/barcelona.jpg"
+      },
+      {
+        "name": "Los Angeles",
+        "imageURL": "https://example.com/los_angeles.jpg"
+      },
+      {
+        "name": "Athens",
+        "imageURL": "https://example.com/athens.jpg"
+      },
+      {
+        "name": "Stockholm",
+        "imageURL": "https://example.com/stockholm.jpg"
+      },
+      {
+        "name": "Dublin",
+        "imageURL": "https://example.com/dublin.jpg"
+      },
+      {
+        "name": "Prague",
+        "imageURL": "https://example.com/prague.jpg"
+      },
+      {
+        "name": "Hong Kong",
+        "imageURL": "https://example.com/hong_kong.jpg"
+      }
+    ]
+  }
+  

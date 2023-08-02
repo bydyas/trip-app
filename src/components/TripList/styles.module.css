@@ -1,6 +1,6 @@
 .list {
     padding: 15px 0;
-    width: 50%;
+    max-width: 50%;
     display: flex;
     gap: 10%;
     overflow-x: auto;
