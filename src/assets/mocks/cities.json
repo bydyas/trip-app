@@ -2,123 +2,43 @@
     "cities": [
       {
         "name": "New York City",
-        "imageURL": "https://example.com/new_york_city.jpg"
+        "imageURL": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/aa/b0/fd/caption.jpg?w=600&h=-1&s=1"
       },
       {
         "name": "Paris",
-        "imageURL": "https://example.com/paris.jpg"
+        "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/1200px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg"
       },
       {
         "name": "Tokyo",
-        "imageURL": "https://example.com/tokyo.jpg"
+        "imageURL": "https://www.theinvisibletourist.com/wp-content/uploads/2021/09/featured_205-.jpg"
       },
       {
         "name": "London",
-        "imageURL": "https://example.com/london.jpg"
+        "imageURL": "https://i2-prod.mirror.co.uk/incoming/article28871026.ece/ALTERNATES/s1200c/0_London-at-sunset.jpg"
       },
       {
         "name": "Sydney",
-        "imageURL": "https://example.com/sydney.jpg"
+        "imageURL": "https://cdn.britannica.com/96/100196-050-C92064E0/Sydney-Opera-House-Port-Jackson.jpg"
       },
       {
         "name": "San Francisco",
-        "imageURL": "https://example.com/san_francisco.jpg"
+        "imageURL": "https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg"
       },
       {
         "name": "Rome",
-        "imageURL": "https://example.com/rome.jpg"
+        "imageURL": "https://cdn.britannica.com/16/99616-050-72CD201A/Colosseum-Rome.jpg"
       },
       {
         "name": "Dubai",
-        "imageURL": "https://example.com/dubai.jpg"
+        "imageURL": "https://static.independent.co.uk/2023/07/04/09/iStock-1193239486.jpg"
       },
       {
         "name": "Beijing",
-        "imageURL": "https://example.com/beijing.jpg"
+        "imageURL": "https://cdn.britannica.com/03/198203-050-138BB1C3/entrance-Gate-of-Divine-Might-Beijing-Forbidden.jpg"
       },
       {
         "name": "Cairo",
-        "imageURL": "https://example.com/cairo.jpg"
-      },
-      {
-        "name": "Rio de Janeiro",
-        "imageURL": "https://example.com/rio_de_janeiro.jpg"
-      },
-      {
-        "name": "Mumbai",
-        "imageURL": "https://example.com/mumbai.jpg"
-      },
-      {
-        "name": "Berlin",
-        "imageURL": "https://example.com/berlin.jpg"
-      },
-      {
-        "name": "Moscow",
-        "imageURL": "https://example.com/moscow.jpg"
-      },
-      {
-        "name": "Singapore",
-        "imageURL": "https://example.com/singapore.jpg"
-      },
-      {
-        "name": "Toronto",
-        "imageURL": "https://example.com/toronto.jpg"
-      },
-      {
-        "name": "Seoul",
-        "imageURL": "https://example.com/seoul.jpg"
-      },
-      {
-        "name": "Amsterdam",
-        "imageURL": "https://example.com/amsterdam.jpg"
-      },
-      {
-        "name": "Venice",
-        "imageURL": "https://example.com/venice.jpg"
-      },
-      {
-        "name": "Bangkok",
-        "imageURL": "https://example.com/bangkok.jpg"
-      },
-      {
-        "name": "Istanbul",
-        "imageURL": "https://example.com/istanbul.jpg"
-      },
-      {
-        "name": "Cape Town",
-        "imageURL": "https://example.com/cape_town.jpg"
-      },
-      {
-        "name": "Vienna",
-        "imageURL": "https://example.com/vienna.jpg"
-      },
-      {
-        "name": "Barcelona",
-        "imageURL": "https://example.com/barcelona.jpg"
-      },
-      {
-        "name": "Los Angeles",
-        "imageURL": "https://example.com/los_angeles.jpg"
-      },
-      {
-        "name": "Athens",
-        "imageURL": "https://example.com/athens.jpg"
-      },
-      {
-        "name": "Stockholm",
-        "imageURL": "https://example.com/stockholm.jpg"
-      },
-      {
-        "name": "Dublin",
-        "imageURL": "https://example.com/dublin.jpg"
-      },
-      {
-        "name": "Prague",
-        "imageURL": "https://example.com/prague.jpg"
-      },
-      {
-        "name": "Hong Kong",
-        "imageURL": "https://example.com/hong_kong.jpg"
+        "imageURL": "https://www.traveloffpath.com/wp-content/uploads/2023/05/Cairo-Pyramids-Egypt.jpg"
       }
     ]
   }

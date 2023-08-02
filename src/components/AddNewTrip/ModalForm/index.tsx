@@ -34,7 +34,7 @@ const ModalForm: FC<IModalFormProps> = ({ close, addTrip }) => {
       id: Math.floor(Math.random() * (500 - 10 + 1)) + 10,
       city,
       URL,
-      dateRange: startDate + '-' + endDate,
+      dateRange: startDate + '  -  ' + endDate,
     });
     onCancel();
   };
