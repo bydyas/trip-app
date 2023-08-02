@@ -9,12 +9,15 @@ import TodaysForecast from '../TodaysForecast';
 import { useWeather } from '../../hooks/useWeather';
 import { ITodaysForecast } from '../TodaysForecast/interfaces';
 import Countdown from '../Countdown';
+import FullForecastList from '../FullForecastList';
+import { IFullForecastItem } from '../FullForecastItem/interfaces';
 
 function App() {
   const [trips, setTrips] = useState(mockData.trips);
   const [filteredTrips, setFilteredTrips] = useState(mockData.trips);
   const { getTodaysForecastForCity, getFullForecastForCity, loading } = useWeather();
   const [todaysForecast, setTodaysForecast] = useState<ITodaysForecast>();
+  const [fullForecastDays, setFullForecastDays] = useState<IFullForecastItem[]>();
   const [targetDate, setTargetDate] = useState<string>(mockData.trips[0].startDate);
 
   useEffect(
@@ -54,7 +57,7 @@ function App() {
     fetchTodayskForecast().then((forecast) => setTodaysForecast(forecast));
 
     const fetchFullForecast = async () => await getFullForecastForCity(city, startDate, endDate);
-    fetchFullForecast().then((forecast) => console.log(forecast));
+    fetchFullForecast().then((forecast) => setFullForecastDays(forecast));
   };
 
   const runCountdownTimer = (date: string) => setTargetDate(date);
@@ -78,6 +81,9 @@ function App() {
             />
             <AddNewTrip addTrip={addTrip} />
           </div>
+          {fullForecastDays?.length && (
+            <FullForecastList fullForecastDays={fullForecastDays as IFullForecastItem[]} />
+          )}
         </main>
         <aside className={styles.sidebar}>
           {loading ? 'Pending . . .' : <TodaysForecast {...(todaysForecast as ITodaysForecast)} />}

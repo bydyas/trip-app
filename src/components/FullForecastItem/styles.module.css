@@ -1,0 +1,15 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.item img {
+    width: 64px;
+    height: 64px;
+}
+
+.item p:first-of-type {
+    color: gray;
+}

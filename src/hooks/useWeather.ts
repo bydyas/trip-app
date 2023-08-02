@@ -63,7 +63,7 @@ export const useWeather = () => {
         }),
         tempmax: day.tempmax,
         tempmin: day.tempmin,
-        icon: day.icon,
+        icon: import.meta.env.VITE_ICONS_URL + day.icon + '.svg',
       };
     });
   };
