@@ -1,0 +1,38 @@
+.forecast {
+    height: 225px;
+    color: #FFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.day {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.details {
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+}
+
+.temp {
+    font-size: 1.75em;
+}
+
+.temp span {
+    font-size: 0.5em;
+    vertical-align: top;
+}
+
+.city {
+    text-align: center;
+    font-size: 2em;
+}

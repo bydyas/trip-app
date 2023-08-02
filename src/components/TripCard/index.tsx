@@ -1,15 +1,10 @@
 import { FC } from 'react';
-import { ITripCard } from './interfaces';
-import { useWeather } from '../../hooks/useWeather';
+import { ITripCardProps } from './interfaces';
 import styles from './styles.module.css';
 
-const TripCard: FC<ITripCard> = ({ city, URL, startDate, endDate }) => {
-  const { getTodaysForecastForCity } = useWeather();
-
+const TripCard: FC<ITripCardProps> = ({ city, URL, startDate, endDate, askTodaysForecast }) => {
   return (
-    <li
-      className={styles.card}
-      onClick={async () => console.log(await getTodaysForecastForCity(city))}>
+    <li className={styles.card} onClick={() => askTodaysForecast(city)}>
       <img className={styles.image} src={URL} alt={city} />
       <div className={styles.details}>
         <h3 className={styles.city}>{city}</h3>
